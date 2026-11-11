@@ -1,0 +1,51 @@
+[
+  {
+    "category": "Legitimate Enterprise",
+    "url": "https://github.com/torvalds/linux",
+    "expected_risk": "Low Risk",
+    "description": "Standard HTTPS developer platform URL with established domain reputation and clean path."
+  },
+  {
+    "category": "Legitimate Documentation",
+    "url": "https://docs.python.org/3/library/urllib.parse.html",
+    "expected_risk": "Low Risk",
+    "description": "Official technical documentation URL with clean SSL structure."
+  },
+  {
+    "category": "Legitimate Financial Portal",
+    "url": "https://chase.com/personal/banking",
+    "expected_risk": "Low Risk",
+    "description": "Verified high-reputation retail banking URL."
+  },
+  {
+    "category": "Direct IP Host Harvester",
+    "url": "http://192.168.1.105/login.php?update_account=true&token=x991",
+    "expected_risk": "High Risk",
+    "description": "Bypasses DNS domain hierarchy using raw IP address host with sensitive login keywords over insecure HTTP."
+  },
+  {
+    "category": "Brand Spoofing & High-Abuse TLD",
+    "url": "http://paypal-verification-center-account.xyz/signin/index.php",
+    "expected_risk": "High Risk",
+    "description": "Hyphenated brand impersonation using suspicious .xyz TLD targeting credentials."
+  },
+  {
+    "category": "Credential Phish with Nested Subdomains",
+    "url": "http://login.secure.bankofamerica.com.account-update.xyz/verify",
+    "expected_risk": "High Risk",
+    "description": "Simulates authentic financial domain inside deeply nested subdomains."
+  },
+  {
+    "category": "URL Shortener Redirect",
+    "url": "http://bit.ly/3xVerifyAccountBankingSecure",
+    "expected_risk": "Medium Risk",
+    "description": "Uses public shortening service masking true destination with credential keywords in path."
+  },
+  {
+    "category": "Embedded Credential Masking",
+    "url": "http://www.google.com@phishingsite.cam/login-prompt",
+    "expected_risk": "High Risk",
+    "description": "Abuses URL standard '@' credential separator to mislead user about destination host."
+  }
+]
+

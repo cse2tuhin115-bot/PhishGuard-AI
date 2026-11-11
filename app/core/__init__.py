@@ -1,0 +1,2 @@
+"""PhishGuard AI - Core module."""
+

@@ -1,0 +1,2 @@
+"""PhishGuard AI - Application Package."""
+

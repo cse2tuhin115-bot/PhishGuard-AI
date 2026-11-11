@@ -1,0 +1,92 @@
+{
+  "model_name": "PhishGuard Random Forest URL Classifier",
+  "model_type": "RandomForestClassifier",
+  "model_version": "1.0.0",
+  "trained_at": "2026-11-11T20:05:07.744581+00:00",
+  "feature_names": [
+    "url_length",
+    "domain_length",
+    "path_length",
+    "query_length",
+    "num_dots",
+    "num_hyphens",
+    "num_underscores",
+    "num_slashes",
+    "num_question_marks",
+    "num_equal_signs",
+    "num_at_symbols",
+    "num_ampersands",
+    "num_percent_signs",
+    "num_digits",
+    "digit_ratio",
+    "num_subdomains",
+    "has_ip_address",
+    "is_https",
+    "has_at_symbol",
+    "has_double_slash_redirect",
+    "has_suspicious_tld",
+    "has_sensitive_keywords",
+    "is_shortened_url",
+    "prefix_suffix_in_domain",
+    "entropy"
+  ],
+  "feature_count": 25,
+  "dataset_summary": {
+    "total_samples": 120,
+    "train_samples": 90,
+    "test_samples": 30,
+    "classes": {
+      "0": "Legitimate",
+      "1": "Phishing"
+    }
+  },
+  "evaluation_metrics": {
+    "accuracy": 0.9667,
+    "precision": 1.0,
+    "recall": 0.9333,
+    "f1_score": 0.9655,
+    "roc_auc": 1.0,
+    "evaluation_notice": "Metrics evaluated on internal defensive demonstration dataset. Synthetic and curated benchmark metrics do not represent real-world production efficacy without continuous, time-separated telemetry validation."
+  },
+  "feature_importance": {
+    "is_https": 0.24441,
+    "domain_length": 0.16509,
+    "prefix_suffix_in_domain": 0.1579,
+    "num_hyphens": 0.11139,
+    "has_suspicious_tld": 0.088,
+    "url_length": 0.07499,
+    "entropy": 0.04701,
+    "has_sensitive_keywords": 0.04467,
+    "path_length": 0.0271,
+    "num_subdomains": 0.00733,
+    "num_slashes": 0.00619,
+    "num_equal_signs": 0.00503,
+    "num_dots": 0.0046,
+    "digit_ratio": 0.00428,
+    "num_digits": 0.00312,
+    "query_length": 0.0031,
+    "num_ampersands": 0.00279,
+    "num_question_marks": 0.00183,
+    "has_ip_address": 0.00104,
+    "num_underscores": 0.00014,
+    "num_at_symbols": 0.0,
+    "num_percent_signs": 0.0,
+    "has_at_symbol": 0.0,
+    "has_double_slash_redirect": 0.0,
+    "is_shortened_url": 0.0
+  },
+  "hyperparameters": {
+    "n_estimators": 100,
+    "max_depth": 8,
+    "min_samples_split": 4,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "limitations": [
+    "ML URL classification is a probabilistic triage mechanism and cannot guarantee that an evaluated URL is safe.",
+    "Newly registered zero-day phishing domains with benign lexical structures may produce false negatives.",
+    "Shortened URLs require secondary HTTP hop resolution for conclusive verification.",
+    "Always combine ML heuristics with threat intelligence feeds, SPF/DKIM/DMARC mail verification, and active browser sandboxing."
+  ]
+}
